@@ -36,9 +36,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/userName"
-            android:hint="Enter Full Name"
-            android:textColor="@color/colorText"
-            android:textColorHint="@color/colorText"/>
+            android:hint="@string/nameHint"
+            android:textColor="@color/colorText"/>
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,7 +47,7 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Male"
+                android:text="@string/male"
                 android:id="@+id/uMale"
                 android:paddingRight="20dp"
                 android:textColor="@color/colorText"/>
@@ -56,15 +55,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorText"
-                android:text="Female"
+                android:text="@string/female"
                 android:id="@+id/uFemale"/>
         </RadioGroup>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/uEmergencyNo"
-            android:hint="Enter Emergency No"
-            android:textColorHint="@color/colorText"
+            android:hint="@string/emer_no_hint"
             android:textColor="@color/colorText"
             android:inputType="number"/>
 
@@ -72,16 +70,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/uDLNO"
-            android:hint="Enter DL NO"
-            android:textColorHint="@color/colorText"
+            android:hint="@string/dlno"
             android:textColor="@color/colorText"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter Blood Group"
+            android:text="@string/bloodgp"
+            android:textColor="#000"
             android:gravity="center"
-            android:textSize="23dp"/>
+            android:textSize="23sp"/>
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_margin="10dp"
