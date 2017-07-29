@@ -33,12 +33,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:id="@+id/loginspinner"
             />
 
         <EditText
             android:layout_margin="20dp"
             android:textColor="@color/colorText"
-            android:hint="Enter Mobile Number"
+            android:hint="@string/loginHint"
             android:id="@+id/mobileNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#077d11"
-            android:text="Go!" />
+            android:text="@string/goButton"
+            android:textColor="#fff"/>
     </LinearLayout>
 </LinearLayout>
