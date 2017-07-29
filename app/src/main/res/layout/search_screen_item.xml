@@ -27,13 +27,14 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
             android:id="@+id/callButton"
-            android:src="" />
+            android:src="@drawable/call" />
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/messageButton"
-            android:src="" />
+            android:src="@drawable/message" />
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"

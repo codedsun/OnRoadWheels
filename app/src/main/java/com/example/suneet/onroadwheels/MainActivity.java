@@ -12,18 +12,25 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
-    EditText mobileNo;
-    Button goButton;
-    String mobNo;
+    private EditText mobileNo;
+    private Button goButton;
+    private String mobNo;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        firebaseDatabase=FirebaseDatabase.getInstance();
+        databaseReference=firebaseDatabase.getReference();
         mobileNo= (EditText) findViewById(R.id.mobileNo);
         goButton= (Button) findViewById(R.id.buttonGo);
         Spinner loginspinner = (Spinner)findViewById(R.id.loginspinner);
