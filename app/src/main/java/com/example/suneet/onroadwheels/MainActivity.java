@@ -2,6 +2,7 @@ package com.example.suneet.onroadwheels;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -44,12 +47,14 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         loginspinner.setAdapter(adapter);
+
         goButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(!((mobileNo.getText().toString().length())==0)) {
 
                     mobNo = mobileNo.getText().toString();
+
                     Intent i=new Intent(MainActivity.this,Registration.class);
                     i.putExtra("MobileNo",mobNo);
                     startActivity(i);
