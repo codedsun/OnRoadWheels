@@ -26,7 +26,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:orientation="horizontal"
         android:layout_weight="3">
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+
         <EditText
             android:layout_margin="20dp"
             android:textColor="@color/colorText"
@@ -34,9 +42,10 @@
             android:id="@+id/mobileNo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:maxLength="10"
             android:inputType="phone"
             android:layout_gravity="center"/>
+
 
     </LinearLayout>
 

@@ -69,7 +69,7 @@
                 android:id="@+id/button2wheeler"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="add 4 wheeler"
+                android:text="add 2 wheeler"
                 android:layout_weight="1"/>
 
 
