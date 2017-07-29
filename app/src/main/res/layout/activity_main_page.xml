@@ -28,15 +28,84 @@
             android:src="@drawable/dummy_user_pic" />
 
         <TextView
+            android:id="@+id/mainPageName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Name"
-            android:textSize="20sp"
-            android:layout_marginStart="7dp"
             android:layout_alignParentTop="true"
-            android:layout_toStartOf="@+id/mainPageDummyImage" />
+            android:layout_marginStart="7dp"
+            android:layout_toStartOf="@+id/mainPageDummyImage"
+            android:text="Name"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/mainPageLicenceNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/mainPageNavigationIcon"
+            android:layout_toStartOf="@+id/mainPageDummyImage"
+            android:text="Licence No" />
+
+        <TextView
+            android:id="@+id/mainPageCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainPageLicenceNo"
+            android:layout_marginTop="9dp"
+            android:layout_toStartOf="@+id/mainPageDummyImage"
+            android:text="City" />
+
+        <TextView
+            android:id="@+id/mainPageLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mainPageCity"
+            android:layout_toStartOf="@+id/mainPageDummyImage"
+            android:text="Location" />
+
+        <ImageView
+            android:id="@+id/bloodGroupIcon"
+            android:layout_width="30sp"
+            android:layout_height="30sp"
+            android:layout_alignBottom="@+id/mainPageLocation"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/blood_group" />
+
+        <TextView
+            android:id="@+id/mainPageBloodGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/bloodGroupIcon"
+            android:layout_toEndOf="@+id/bloodGroupIcon"
+            android:text="BloodGroup" />
 
     </RelativeLayout>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:layout_marginTop="15dp"
+        android:background="#DCDCDC"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:gravity="center">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mainPageVechileSearch"/>
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/search_icon"
+            android:id="@+id/mainPageSearchButton"/>
+
+
+
+    </LinearLayout>
 
 
 </LinearLayout>
