@@ -70,7 +70,7 @@ public class Registration extends Activity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userProfile=new UserProfile(username.getText().toString(),"",drivingfitLicenceNo.getText().toString(),"B+","addreess","age","male","status","famer","disease");
+                userProfile=new UserProfile(username.getText().toString(),"",drivingLicenceNo.getText().toString(),"B+","addreess","age","male","status","famer","disease");
                 emergencyContacts.add(new EmergencyContact(emergencyNo.getText().toString(),"Father"));
                 vehicles.add(new Vehicle("UP32","Lambo","4W"));
                 user=new User(userProfile,emergencyContacts,vehicles);
