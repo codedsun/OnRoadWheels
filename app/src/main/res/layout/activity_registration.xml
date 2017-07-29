@@ -6,28 +6,31 @@
     android:orientation="vertical"
     android:layout_marginTop="20dp"
     android:layout_height="match_parent"
-
     tools:context="com.example.suneet.onroadwheels.Registration">
 
     <ImageButton
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginBottom="10dp"
         android:id="@+id/userImage"
         android:layout_gravity="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:margin="5dp"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
-        <EditText
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
+            android:gravity="center"
             android:id="@+id/userMobNo"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorText"
-            android:hint="Enter Mobile Number"/>
+            android:hint="Mobile Number"/>
 
 
         <EditText
@@ -136,16 +139,18 @@
         </RadioGroup>
 
 
-        <Button
-            android:id="@+id/buttonNext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill"
-            android:background="#AA0014"
-            android:text="NEXT" />
 
 
     </LinearLayout>
+    <Button
+        android:id="@+id/buttonNext"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#AA0014"
+        android:text="NEXT" />
+
 
 
 
