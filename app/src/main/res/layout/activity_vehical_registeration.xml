@@ -63,4 +63,11 @@
         android:layout_width="match_parent"
         android:layout_height="10dp"
         android:id="@+id/wheeler2CardView"/>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="next" />
 </LinearLayout>
