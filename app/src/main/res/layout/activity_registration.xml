@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/userName"
-            android:hint="Enter Mobile No"
+            android:hint="Enter Full Name"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorText"/>
         <RadioGroup
@@ -56,7 +56,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorText"
-                android:text="Feamle"/>
+                android:text="Female"
+                android:id="@+id/uFemale"/>
         </RadioGroup>
         <EditText
             android:layout_width="match_parent"
