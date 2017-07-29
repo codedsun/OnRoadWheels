@@ -17,11 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Registration" />
-<<<<<<< HEAD
+
         <activity android:name=".EditProfile"></activity>
-=======
+
         <activity android:name=".VehicalRegisteration"></activity>
->>>>>>> c9483cac26abcc315b0607048f3114b9639cb4c1
+
     </application>
 
 </manifest>
