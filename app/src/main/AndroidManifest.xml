@@ -17,11 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Registration" />
-
-        <activity android:name=".EditProfile"></activity>
-
-        <activity android:name=".VehicalRegisteration"></activity>
-
+        <activity android:name=".EditProfile" />
+        <activity android:name=".VehicalRegisteration" />
+        <activity android:name=".MainPageActivity"></activity>
     </application>
 
 </manifest>
