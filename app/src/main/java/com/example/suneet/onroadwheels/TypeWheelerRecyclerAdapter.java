@@ -45,7 +45,7 @@ public class TypeWheelerRecyclerAdapter extends RecyclerView.Adapter<TypeWheeler
 
     @Override
     public int getItemCount() {
-        return 0;
+        return vehicleArrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

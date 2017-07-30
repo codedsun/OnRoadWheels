@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/editTextVehicleName"
+        android:id="@+id/alertDialogEditTextVehicleNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -13,7 +13,7 @@
         android:gravity="center"/>
 
     <EditText
-        android:id="@+id/editTextVehicleModel"
+        android:id="@+id/alertDialogEditTextVehicleModel"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
