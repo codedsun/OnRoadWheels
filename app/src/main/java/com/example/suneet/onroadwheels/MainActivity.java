@@ -153,7 +153,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                 if(task.isSuccessful())
                 {
                     Toast.makeText(MainActivity.this, "Registration Successfull ", Toast.LENGTH_SHORT).show();
-                   // Intent i=new Intent(MainActivity.this,Registration.class);
+                   //Intent i=new Intent(MainActivity.this,Registration.class);
                     Intent i=new Intent(MainActivity.this,MainPageActivity.class);
                     i.putExtra("MobileNo",mobNo);
                     startActivity(i);

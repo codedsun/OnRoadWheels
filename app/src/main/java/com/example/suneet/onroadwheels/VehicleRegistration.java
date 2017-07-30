@@ -117,7 +117,7 @@ public class VehicleRegistration extends Activity {
                     }
                 });
 
-                startActivity(new Intent(VehicleRegistration.this,EditProfile.class));
+                startActivity(new Intent(VehicleRegistration.this,MainPageActivity.class));
 
 
 
