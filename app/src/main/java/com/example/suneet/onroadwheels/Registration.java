@@ -40,7 +40,7 @@ public class Registration extends Activity implements AdapterView.OnItemSelected
     DatabaseReference database;
     User user;
     UserProfile userProfile;
-    ArrayList<EmergencyContact>  emergencyContacts=new ArrayList<>();
+    ArrayList<EmergencyContact> emergencyContacts=new ArrayList<>();
     ArrayList<Vehicle> vehicles=new ArrayList<>();
 
 

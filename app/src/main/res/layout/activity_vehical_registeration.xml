@@ -4,25 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     tools:context="com.example.suneet.onroadwheels.VehicalRegisteration"
     android:orientation="vertical">
     <ImageView
         android:layout_margin="20dp"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:id="@+id/userImage"
         android:layout_gravity="center"
         android:src="@drawable/dummy_user_pic" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
         android:gravity="center">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="matrix"
+            android:id="@+id/vechilePromo"
+            android:background="@drawable/vechilePromo"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,18 +36,19 @@
             android:layout_margin="10dp">
             <ImageView
                 android:layout_marginTop="5dp"
-                android:layout_weight="10"
                 android:id="@+id/imageView3"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/dummy_4_wheeler" />
-
             <Button
                 android:id="@+id/button4wheeler"
+                android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorDarkGreen"
                 android:text="add 4 wheeler"
-                android:layout_weight="1"/>
+                android:textSize="20dp"
+                android:textStyle="normal"/>
 
         </LinearLayout>
 
@@ -60,17 +66,20 @@
             <ImageView
                 android:layout_marginTop="5dp"
                 android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:layout_weight="10"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/dummy_2_wheeler" />
 
             <Button
                 android:id="@+id/button2wheeler"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textStyle="normal"
+                android:background="#76C2AF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="add 2 wheeler"
-                android:layout_weight="1"/>
+                android:text="add 2 wheeler" />
 
 
         </LinearLayout>
@@ -81,10 +90,10 @@
             android:id="@+id/wheeler2CardView"/>
     </LinearLayout>
 
+
     <Button
-        android:id="@+id/button2"
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="next" />
+        android:text="NEXT"
+        android:background="@color/colorGreen"/>
 </LinearLayout>
