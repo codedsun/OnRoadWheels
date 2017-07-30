@@ -109,7 +109,7 @@ public class VehicleRegistration extends Activity {
                 newuser = new User(userProfile,contactList,vehicleList);
                 Log.e(TAG, "onNew uSer "+mobNo);
                 DatabaseReference databaseReference1=FirebaseDatabase.getInstance().getReference();
-                databaseReference1.child("USERS").child(mobNo).setValue("Suneet").addOnCompleteListener(new OnCompleteListener<Void>() {
+                databaseReference1.child("USERS").child(mobNo).setValue(newuser).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Log.e(TAG, "onComplete: aagye asa" );
