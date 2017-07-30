@@ -22,12 +22,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Registration extends Activity implements AdapterView.OnItemSelectedListener {
     Intent recieved;
-    String mobNo;
+    String mobNo,userName,gender,emergencyNumber,DLNumber,address,age,bloodgp;
     ImageView profilePic;
     TextView mobileNo;
     EditText username;
@@ -35,13 +36,16 @@ public class Registration extends Activity implements AdapterView.OnItemSelected
     RadioButton genderF;
     EditText emergencyNo;
     EditText drivingLicenceNo;
+    EditText userAddress;
     Button nextButton;
-    Spinner spinner;
+    EditText userAge;
     DatabaseReference database;
-    User user;
-    UserProfile userProfile;
-    ArrayList<EmergencyContact> emergencyContacts=new ArrayList<>();
-    ArrayList<Vehicle> vehicles=new ArrayList<>();
+    Spinner loginspinner;
+    List<String> list = new ArrayList<>();
+//    User user;
+//    UserProfile userProfile;
+//    ArrayList<EmergencyContact> emergencyContacts=new ArrayList<>();
+//    ArrayList<Vehicle> vehicles=new ArrayList<>();
 
 
     @Override
@@ -58,9 +62,11 @@ public class Registration extends Activity implements AdapterView.OnItemSelected
         emergencyNo= (EditText) findViewById(R.id.uEmergencyNo);
         drivingLicenceNo= (EditText) findViewById(R.id.uDLNO);
         nextButton= (Button) findViewById(R.id.buttonNext);
-        Spinner loginspinner = (Spinner)findViewById(R.id.regspinner);
+        userAddress = (EditText)findViewById(R.id.userAddress);
+        userAge = (EditText)findViewById(R.id.userAge);
+        loginspinner = (Spinner)findViewById(R.id.regspinner);
         loginspinner.setOnItemSelectedListener(this);
-        List<String> list = new ArrayList<>();
+        bloodgp = "AB+";
         list.add("AB+");
         list.add("AB-");
         list.add("A+");
@@ -82,23 +88,48 @@ public class Registration extends Activity implements AdapterView.OnItemSelected
         }
         catch (Exception e)
         {
-            Log.e("TAG", "onCreate:registartion Exception"+e.getMessage());
+            Log.e("TAG", "onCreate:registration Exception"+e.getMessage());
         }
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                userProfile=new UserProfile(username.getText().toString(),"",drivingLicenceNo.getText().toString(),"B+","address","age","male","status","famer","disease");
-                emergencyContacts.add(new EmergencyContact(emergencyNo.getText().toString(),"Father"));
-                vehicles.add(new Vehicle("UP32","Lambo","4W"));
-                user=new User(userProfile,emergencyContacts,vehicles);
-                database.child("Users").child(mobNo).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(Registration.this,"Added Bhai",Toast.LENGTH_SHORT).show();
+              public void onClick(View v) {
+//                userProfile=new UserProfile(username.getText().toString(),"",drivingLicenceNo.getText().toString(),"B+","address","age","male","status","famer","disease");
+//                emergencyContacts.add(new EmergencyContact(emergencyNo.getText().toString(),"Father"));
+//                vehicles.add(new Vehicle("UP32","Lambo","4W"));
+//                user=new User(userProfile,emergencyContacts,vehicles);
+//                database.child("Users").child(mobNo).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        Toast.makeText(Registration.this,"Added Bhai",Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+
+                    userName = username.getText().toString();
+                    if(genderM.isChecked()){
+                        gender="Male";
                     }
-                });
-                Intent i=new Intent(Registration.this,VehicalRegisteration.class);
-                startActivity(i);
+                    else{
+                        gender="Female";
+                    }
+                    emergencyNumber = emergencyNo.getText().toString();
+                    DLNumber = drivingLicenceNo.getText().toString();
+                    address = userAddress.getText().toString();
+                    age = userAge.getText().toString();
+                if(userName.isEmpty()||gender.isEmpty()||emergencyNumber.isEmpty()||DLNumber.isEmpty()||address.isEmpty()||age.isEmpty()){
+                    Toast.makeText(Registration.this, "All Fields Required!", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Intent i=new Intent(Registration.this,VehicalRegisteration.class);
+                    i.putExtra("MobileNo",mobNo);
+                    i.putExtra("userName",userName);
+                    i.putExtra("gender",gender);
+                    i.putExtra("EmergencyNumber",emergencyNumber);
+                    i.putExtra("DrivingLicence",DLNumber);
+                    i.putExtra("Address",address);
+                    i.putExtra("BloodGP",bloodgp);
+                    i.putExtra("Age",age);
+                    startActivity(i);
+                }
             }
         });
 
@@ -107,11 +138,12 @@ public class Registration extends Activity implements AdapterView.OnItemSelected
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
+        bloodgp =list.get(position);
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+        bloodgp = "AB+";
 
     }
 }

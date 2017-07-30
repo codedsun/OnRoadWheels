@@ -13,8 +13,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
@@ -95,7 +93,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
             @Override
             public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                Log.e("", "onCodeSent: "+ s +" TOken"+forceResendingToken.toString()) ;
+                Log.e("", "onCodeSent: "+ s +" Token"+forceResendingToken.toString()) ;
                 super.onCodeSent(s, forceResendingToken);
 
             }
