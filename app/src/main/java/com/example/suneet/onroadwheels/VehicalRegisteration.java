@@ -14,7 +14,7 @@ public class VehicalRegisteration extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehical_registeration);
-        buttonNext = (Button)findViewById(R.id.button2);
+        buttonNext = (Button)findViewById(R.id.buttonVechileNext);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
