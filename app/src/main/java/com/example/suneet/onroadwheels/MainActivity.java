@@ -87,6 +87,18 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
             public void onVerificationFailed(FirebaseException e) {
                 Log.e("TAG", "onVerificationFailed: "+e.getMessage() );
             }
+
+            @Override
+            public void onCodeAutoRetrievalTimeOut(String s) {
+                super.onCodeAutoRetrievalTimeOut(s);
+            }
+
+            @Override
+            public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                Log.e("", "onCodeSent: "+ s +" TOken"+forceResendingToken.toString()) ;
+                super.onCodeSent(s, forceResendingToken);
+
+            }
         };
 
     }

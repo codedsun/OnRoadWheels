@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Registration extends Activity {
     Intent recieved;
@@ -37,7 +38,7 @@ public class Registration extends Activity {
     DatabaseReference database;
     User user;
     UserProfile userProfile;
-    ArrayList<EmergencyContact>  emergencyContacts=new ArrayList<>();
+    ArrayList<EmergencyContact> emergencyContacts=new ArrayList<>();
     ArrayList<Vehicle> vehicles=new ArrayList<>();
 
 
