@@ -108,13 +108,15 @@ public class VehicleRegistration extends Activity {
                 //Final User Object
                 newuser = new User(userProfile,contactList,vehicleList);
                 Log.e(TAG, "onNew uSer "+mobNo);
-                DatabaseReference databaseReference1=FirebaseDatabase.getInstance().getReference();
-                databaseReference1.child("USERS").child(mobNo).setValue(newuser).addOnCompleteListener(new OnCompleteListener<Void>() {
+                final DatabaseReference databaseReference1=FirebaseDatabase.getInstance().getReference();
+                databaseReference.child(App.USERSBRANCH).child(mobNo).setValue(newuser).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         Log.e(TAG, "onComplete: aagye asa" );
+
                     }
                 });
+
                 startActivity(new Intent(VehicleRegistration.this,EditProfile.class));
 
 
@@ -147,6 +149,12 @@ public class VehicleRegistration extends Activity {
                                 twoWheelerRecycelerView.setAdapter(typeWheelerRecyclerAdapter);
                                 typeWheelerRecyclerAdapter.notifyDataSetChanged();
                                 Toast.makeText(VehicleRegistration.this, "Added Sucessfully", Toast.LENGTH_SHORT).show();
+                                databaseReference.child(App.VEHICLEBRANCH).child(vehicleNo.getText().toString()).setValue(mobNo).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        Log.e(TAG, "onComplete:VEHICLE BRANCH" );
+                                    }
+                                });
 
 
                             }

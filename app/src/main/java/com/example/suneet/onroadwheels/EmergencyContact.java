@@ -8,6 +8,9 @@ class EmergencyContact {
     private String mobileNo;
     private String relation;
 
+    public EmergencyContact(){
+
+    }
     public String getMobileNo() {
         return mobileNo;
     }

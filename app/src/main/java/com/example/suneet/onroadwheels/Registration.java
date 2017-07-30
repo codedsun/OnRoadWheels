@@ -47,6 +47,7 @@ public class Registration extends Activity implements AdapterView.OnItemSelected
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
         database = FirebaseDatabase.getInstance().getReference();
         profilePic= (ImageView) findViewById(R.id.userImage);
         mobileNo= (TextView) findViewById(R.id.userMobNo);
@@ -76,6 +77,7 @@ public class Registration extends Activity implements AdapterView.OnItemSelected
         recieved=getIntent();
         try {
             mobNo = recieved.getStringExtra("MobileNo");
+            App.MOBILENO=mobNo;
             Log.e("TAG", "onCreate: "+mobNo );
             mobileNo.setText("+91-"+mobNo);
 

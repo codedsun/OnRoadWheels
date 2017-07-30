@@ -8,7 +8,8 @@ class Vehicle {
     private String vehicleNo;
     private String vechileModel;
     private String vechileType;
-
+  public Vehicle()
+  {}
     public Vehicle(String vehicleNo, String vechileModel, String vechileType) {
         this.vehicleNo = vehicleNo;
         this.vechileModel = vechileModel;

@@ -80,6 +80,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                 int len = mobileNo.getText().toString().length();
                 if(len>=10&&len<=12) {
                     mobNo = mobileNo.getText().toString();
+                    App.MOBILENO=mobNo;
                     Log.e("TAG", "onClick: "+mobNo );
                     phoneAuthProvider.verifyPhoneNumber(mobNo, 60, TimeUnit.SECONDS, MainActivity.this, mcallback);
 
@@ -152,7 +153,8 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                 if(task.isSuccessful())
                 {
                     Toast.makeText(MainActivity.this, "Registration Successfull ", Toast.LENGTH_SHORT).show();
-                    Intent i=new Intent(MainActivity.this,Registration.class);
+                   // Intent i=new Intent(MainActivity.this,Registration.class);
+                    Intent i=new Intent(MainActivity.this,MainPageActivity.class);
                     i.putExtra("MobileNo",mobNo);
                     startActivity(i);
 

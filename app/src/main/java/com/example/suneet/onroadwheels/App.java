@@ -14,6 +14,11 @@ public class App extends Application {
 
     public static String TAG="APPLICATION";
     public static DatabaseReference databaseReference;
+    public static final String USERSBRANCH="USERS";
+    public static final String VEHICLEBRANCH="VEHICLENO";
+    public static String MOBILENO;
+
+
 
 
     @Override
