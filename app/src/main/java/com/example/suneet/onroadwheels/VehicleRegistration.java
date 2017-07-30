@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -26,7 +27,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class VehicleRegistration extends Activity {
+    public static String TAG="VehicleRegistration";
 
     private ImageView profilePic;
     private ImageView banner;
@@ -34,7 +42,7 @@ public class VehicleRegistration extends Activity {
     private android.app.AlertDialog.Builder builder;
     private android.app.AlertDialog alertDialog;
     private Button add2Wheeler;
-
+    private DatabaseReference databaseReference;
     UserProfile userProfile=new UserProfile();
     ArrayList<EmergencyContact> contactList = new ArrayList<>();
     User newuser;
@@ -51,7 +59,7 @@ public class VehicleRegistration extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehical_registeration);
-
+        databaseReference=App.databaseReference;
         buttonNext = (Button)findViewById(R.id.buttonVechileNext);
 
         profilePic= (ImageView) findViewById(R.id.userImage);
@@ -94,11 +102,21 @@ public class VehicleRegistration extends Activity {
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(VehicleRegistration.this,EditProfile.class));
+                Log.e(TAG, "onClick: "+databaseReference);
                 Toast.makeText(VehicleRegistration.this, "Passed Data : "+mobNo+userName+gender+emergencyNumber+DLNumber+address+age, Toast.LENGTH_SHORT).show();
 
                 //Final User Object
                 newuser = new User(userProfile,contactList,vehicleList);
+                Log.e(TAG, "onNew uSer "+mobNo);
+                DatabaseReference databaseReference1=FirebaseDatabase.getInstance().getReference();
+                databaseReference1.child("USERS").child(mobNo).setValue("Suneet").addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        Log.e(TAG, "onComplete: aagye asa" );
+                    }
+                });
+                startActivity(new Intent(VehicleRegistration.this,EditProfile.class));
+
 
 
             }
@@ -174,4 +192,8 @@ public class VehicleRegistration extends Activity {
             }
         });
     }
+
+
+
+
 }
