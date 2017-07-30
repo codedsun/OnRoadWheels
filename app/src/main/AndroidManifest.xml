@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".Registration" />
         <activity android:name=".EditProfile" />
-        <activity android:name=".VehicalRegisteration" />
+        <activity android:name=".VehicleRegistration" />
         <activity android:name=".MainPageActivity" />
         <activity android:name=".SearchScreenActivity"></activity>
     </application>

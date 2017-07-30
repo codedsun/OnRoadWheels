@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="DL NO"
+        android:textColor="#000"
         android:gravity="center"
         android:id="@+id/editProfileDLNO"/>
     <LinearLayout
@@ -30,41 +31,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:editable="false"
-            android:hint="Name"
+            android:hint="@string/name"
             android:id="@+id/editProfileName"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:editable="true"
-            android:hint="Address"
+            android:hint="@string/address"
             android:id="@+id/editProfileAddress"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Age"
+            android:hint="@string/age"
             android:id="@+id/editProfileAge"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editProfileOccupation"
-            android:hint="Occupation"/>
+            android:hint="@string/occupation"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editProfileCarModel"
-            android:hint="Car Model"/>
+            android:hint="@string/car_model"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editProfileBloodGroup"
             android:editable="false"
-            android:hint="Blood Group" />
+            android:hint="@string/bloodgrp" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editProfileDiseases"
-            android:hint="Diseases(If Any)"/>
+            android:hint="@string/disease"/>
 
 
 </LinearLayout>

@@ -98,7 +98,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
             @Override
             public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                Log.e("", "onCodeSent: "+ s +" TOken"+forceResendingToken.toString()) ;
+                Log.e("", "onCodeSent: "+ s +" Token"+forceResendingToken.toString()) ;
                 super.onCodeSent(s, forceResendingToken);
 
             }
