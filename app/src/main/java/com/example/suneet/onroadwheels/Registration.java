@@ -52,6 +52,7 @@ public class Registration extends Activity implements AdapterView.OnItemSelected
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+        Toast.makeText(getApplicationContext(),"NEw",Toast.LENGTH_SHORT).show();
 
         database = FirebaseDatabase.getInstance().getReference();
         profilePic= (ImageView) findViewById(R.id.userImage);
