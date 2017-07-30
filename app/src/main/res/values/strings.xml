@@ -14,6 +14,10 @@
     <string name="next">Next</string>
     <string name="vehicleNumber">Enter Vehicle Number</string>
     <string name="vehicleModel">Enter Vehicle Model</string>
-    <string name="add">ADD</string>
+    <string name="name">Name</string>
+    <string name="occupation">Occupation</string>
+    <string name="car_model">Car Model</string>
+    <string name="bloodgrp">Blood Group</string>
+    <string name="disease">Disease(if Any)</string>
 
 </resources>
