@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="20dp"
+    android:layout_marginTop="10dp"
     android:layout_height="match_parent"
+    android:weightSum="4"
     tools:context="com.example.suneet.onroadwheels.Registration">
 
     <ImageButton
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="0dp"
+        android:layout_weight="2.5"
         android:layout_marginBottom="10dp"
         android:id="@+id/userImage"
         android:layout_gravity="center"/>
@@ -19,50 +21,67 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_marginTop="20dp"
+        android:layout_weight="1.3"
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:textStyle="bold"
+            android:layout_height="25dp"
             android:gravity="center"
             android:id="@+id/userMobNo"
             android:textColor="@color/colorText"
             android:textColorHint="@color/colorText"
-            android:hint="Mobile Number"/>
+            android:hint="Mobile Number"
+            android:textSize="23sp"/>
 
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:id="@+id/userName"
             android:hint="@string/nameHint"
             android:textColor="@color/colorText"/>
-        <RadioGroup
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:layout_gravity="center">
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/male"
-                android:id="@+id/uMale"
-                android:paddingRight="20dp"
-                android:textColor="@color/colorText"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="@string/gender"
+                android:layout_gravity="center"
                 android:textColor="@color/colorText"
-                android:text="@string/female"
-                android:id="@+id/uFemale"/>
-        </RadioGroup>
+                android:textSize="20sp" />
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/male"
+                    android:id="@+id/uMale"
+                    android:paddingRight="20dp"
+                    android:textColor="@color/colorText"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorText"
+                    android:text="@string/female"
+                    android:id="@+id/uFemale"/>
+            </RadioGroup>
+        </LinearLayout>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/uEmergencyNo"
+            android:layout_margin="5dp"
             android:hint="@string/emer_no_hint"
             android:textColor="@color/colorText"
             android:inputType="number"/>
@@ -72,38 +91,68 @@
             android:layout_height="wrap_content"
             android:id="@+id/uDLNO"
             android:hint="@string/dlno"
+            android:layout_margin="5dp"
             android:textColor="@color/colorText"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:id="@+id/userAddress"
+            android:hint="@string/address"
+            android:textColor="@color/colorText"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bloodgp"
+                android:textColor="#000"
+                android:gravity="center"
+                android:textSize="20sp"/>
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/regspinner">
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-        <TextView
+            </Spinner>
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bloodgp"
-            android:textColor="#000"
-            android:gravity="center"
-            android:textSize="20sp"/>
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/regspinner">
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:layout_gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age"
+                android:textColor="#000"
+                android:gravity="center"
+                android:textSize="19sp"/>
+            <EditText
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/userAge"
+                android:textColor="@color/colorText"/>
+        </LinearLayout>
 
-        </Spinner>
+
+
     </LinearLayout>
+
+
+
     <Button
         android:id="@+id/buttonNext"
-
+        android:layout_weight="0.2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:textStyle="normal|bold"
         android:background="#AA0014"
-        android:text="NEXT" />
-
-
-
-
+        android:text="@string/next"/>
 </LinearLayout>

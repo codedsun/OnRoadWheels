@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -23,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Registration extends Activity {
+public class Registration extends Activity implements AdapterView.OnItemSelectedListener {
     Intent recieved;
     String mobNo;
     ImageView profilePic;
@@ -56,12 +58,26 @@ public class Registration extends Activity {
         emergencyNo= (EditText) findViewById(R.id.uEmergencyNo);
         drivingLicenceNo= (EditText) findViewById(R.id.uDLNO);
         nextButton= (Button) findViewById(R.id.buttonNext);
-        spinner= (Spinner) findViewById(R.id.regspinner);
+        Spinner loginspinner = (Spinner)findViewById(R.id.regspinner);
+        loginspinner.setOnItemSelectedListener(this);
+        List<String> list = new ArrayList<>();
+        list.add("AB+");
+        list.add("AB-");
+        list.add("A+");
+        list.add("A-");
+        list.add("O+");
+        list.add("O-");
+        list.add("B+");
+        list.add("B-");
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,list);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        loginspinner.setAdapter(adapter);
+
         recieved=getIntent();
         try {
             mobNo = recieved.getStringExtra("MobileNo");
             Log.e("TAG", "onCreate: "+mobNo );
-            mobileNo.setText(mobNo);
+            mobileNo.setText("+91-"+mobNo);
 
         }
         catch (Exception e)
@@ -71,7 +87,7 @@ public class Registration extends Activity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                userProfile=new UserProfile(username.getText().toString(),"",drivingLicenceNo.getText().toString(),"B+","addreess","age","male","status","famer","disease");
+                userProfile=new UserProfile(username.getText().toString(),"",drivingLicenceNo.getText().toString(),"B+","address","age","male","status","famer","disease");
                 emergencyContacts.add(new EmergencyContact(emergencyNo.getText().toString(),"Father"));
                 vehicles.add(new Vehicle("UP32","Lambo","4W"));
                 user=new User(userProfile,emergencyContacts,vehicles);
@@ -86,6 +102,16 @@ public class Registration extends Activity {
             }
         });
 
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }
