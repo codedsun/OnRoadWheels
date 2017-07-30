@@ -6,11 +6,11 @@ import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-<<<<<<< HEAD
+
 import android.text.TextUtils;
-=======
+
 import android.util.Log;
->>>>>>> 4ae6c0800d15a6f50cb41d2a6d9bac0626a221ed
+
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -69,14 +69,13 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                 int len = mobileNo.getText().toString().length();
                 if(len>=10&&len<=12) {
                     mobNo = mobileNo.getText().toString();
-<<<<<<< HEAD
-=======
+
                     Log.e("TAG", "onClick: "+mobNo );
                    phoneAuthProvider.verifyPhoneNumber(mobNo, 60, TimeUnit.SECONDS, MainActivity.this, callback);
->>>>>>> 4ae6c0800d15a6f50cb41d2a6d9bac0626a221ed
                     Intent i=new Intent(MainActivity.this,Registration.class);
                     i.putExtra("MobileNo",mobNo);
                     startActivity(i);
+
                 }
                 else
                 {

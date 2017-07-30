@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Screen 2
 public class Registration extends Activity implements AdapterView.OnItemSelectedListener {
     Intent recieved;
     String mobNo;
@@ -36,7 +36,7 @@ public class Registration extends Activity implements AdapterView.OnItemSelected
     EditText emergencyNo;
     EditText drivingLicenceNo;
     Button nextButton;
-    Spinner spinner;
+    Spinner loginspinner;
     DatabaseReference database;
     User user;
     UserProfile userProfile;
@@ -58,7 +58,7 @@ public class Registration extends Activity implements AdapterView.OnItemSelected
         emergencyNo= (EditText) findViewById(R.id.uEmergencyNo);
         drivingLicenceNo= (EditText) findViewById(R.id.uDLNO);
         nextButton= (Button) findViewById(R.id.buttonNext);
-        Spinner loginspinner = (Spinner)findViewById(R.id.regspinner);
+        loginspinner = (Spinner)findViewById(R.id.regspinner);
         loginspinner.setOnItemSelectedListener(this);
         List<String> list = new ArrayList<>();
         list.add("AB+");
