@@ -3,7 +3,10 @@ package com.example.suneet.onroadwheels;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +16,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
@@ -93,7 +98,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
             @Override
             public void onCodeSent(String s, PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                Log.e("", "onCodeSent: "+ s +" Token"+forceResendingToken.toString()) ;
+                Log.e("", "onCodeSent: "+ s +" TOken"+forceResendingToken.toString()) ;
                 super.onCodeSent(s, forceResendingToken);
 
             }
