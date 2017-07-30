@@ -3,6 +3,7 @@ package com.example.suneet.onroadwheels;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -13,13 +14,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class SearchScreenActivity extends Activity implements ValueEventListener {
 
     private DatabaseReference databaseReference;
     private User searchUser;
     private TextView vehicleNo;
     private RecyclerView recyclerView;
+    private ArrayList<EmergencyContact> emergencyContact;
     private TextView name,bloodGroup,age,occupation,disease,gender,address;
+    SearchViewRecyclerViewAdapter searchViewRecyclerViewAdapter;
+    RecyclerView.LayoutManager layoutManager;
     String VNO;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +37,9 @@ public class SearchScreenActivity extends Activity implements ValueEventListener
         databaseReference= FirebaseDatabase.getInstance().getReference().child(App.USERSBRANCH).child(mobileNo);
         databaseReference.addValueEventListener(this);
         vehicleNo = (TextView) findViewById(R.id.searchCarNo);
+
         recyclerView= (RecyclerView) findViewById(R.id.searchScreenrecyclerView);
+
 
         name= (TextView) findViewById(R.id.searchScreenName);
         bloodGroup= (TextView) findViewById(R.id.searchScreenBloodGroup);
@@ -50,6 +58,14 @@ public class SearchScreenActivity extends Activity implements ValueEventListener
     @Override
     public void onDataChange(DataSnapshot dataSnapshot) {
         searchUser=dataSnapshot.getValue(User.class);
+        emergencyContact=searchUser.getEmergencyContacts();
+        searchViewRecyclerViewAdapter = new SearchViewRecyclerViewAdapter(emergencyContact,this,searchUser);
+        layoutManager = new LinearLayoutManager(this);
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(searchViewRecyclerViewAdapter);
+        searchViewRecyclerViewAdapter.notifyDataSetChanged();
+
         vehicleNo.setText(VNO);
         name.setText("Name : "+searchUser.getUserProfile().getUserName());
         bloodGroup.setText("Blood Group : "+searchUser.getUserProfile().getBloodGroup());

@@ -52,10 +52,12 @@ public class MainPageActivity extends Activity implements ValueEventListener, Vi
         searchVehicleNo= (EditText) findViewById(R.id.mainPageVehicleSearch);
         searchButton= (ImageButton) findViewById(R.id.mainPageSearchButton);
         searchButton.setOnClickListener(this);
+        navigationIcon.setOnClickListener(this);
 
        // Toast.makeText(this, "Welcome "+databaseReference.getKey("age"), Toast.LENGTH_SHORT).show();
 
     }
+
 
     @Override
     public void onDataChange(DataSnapshot dataSnapshot) {
@@ -122,5 +124,11 @@ public class MainPageActivity extends Activity implements ValueEventListener, Vi
                 Toast.makeText(this, "Enter the Number", Toast.LENGTH_SHORT).show();
             }
         }
+        if(v.getId()==navigationIcon.getId())
+        {
+            startActivity(new Intent(MainPageActivity.this,EditProfile.class));
+
+        }
+
     }
 }
