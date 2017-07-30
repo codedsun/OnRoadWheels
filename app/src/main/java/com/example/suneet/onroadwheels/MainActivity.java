@@ -2,9 +2,11 @@ package com.example.suneet.onroadwheels;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -51,20 +53,19 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         goButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!((mobileNo.getText().toString().length())==0)) {
-
+                int len = mobileNo.getText().toString().length();
+                if(len>=10&&len<=12) {
                     mobNo = mobileNo.getText().toString();
-
                     Intent i=new Intent(MainActivity.this,Registration.class);
                     i.putExtra("MobileNo",mobNo);
                     startActivity(i);
                 }
                 else
                 {
-                    Toast.makeText(MainActivity.this,"Enter the Mobile No",Toast.LENGTH_SHORT).show();
+                    mobileNo.setText("");
+                    mobileNo.setHint("Invalid No");
+                    mobileNo.setHintTextColor(Color.RED);
                 }
-
-
             }
         });
 

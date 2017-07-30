@@ -1,9 +1,6 @@
 <resources>
     <string name="app_name">OnRoadWheels</string>
-
-
-    <string name="gender">Gender</string>
-
+    <string name="gender">Gender : </string>
     <string name="loginHint">Enter Mobile Number</string>
     <string name="goButton">GO!</string>
     <string name="nameHint">Enter Name</string>
@@ -12,5 +9,8 @@
     <string name="emer_no_hint">Emergency Number</string>
     <string name="dlno">Enter DL No.</string>
     <string name="bloodgp">Enter Blood Group</string>
+    <string name="age">Age :</string>
+    <string name="address">Address</string>
+    <string name="next">Next</string>
 
 </resources>
