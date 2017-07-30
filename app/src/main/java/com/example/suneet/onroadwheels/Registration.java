@@ -2,6 +2,7 @@ package com.example.suneet.onroadwheels;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -69,7 +70,7 @@ public class Registration extends Activity implements AdapterView.OnItemSelected
         list.add("O-");
         list.add("B+");
         list.add("B-");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,list);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         loginspinner.setAdapter(adapter);
 
@@ -127,6 +128,13 @@ public class Registration extends Activity implements AdapterView.OnItemSelected
                 }
             }
         });
+        profilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_PICK,android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(i,0);
+            }
+        });
 
 
     }
@@ -139,6 +147,13 @@ public class Registration extends Activity implements AdapterView.OnItemSelected
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
         bloodgp = "AB+";
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
 
     }
 }
